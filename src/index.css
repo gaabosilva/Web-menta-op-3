@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-menta-primary: #1a1a18;
+  --color-menta-accent: #2d5a4c; /* Deep Mint */
+  --color-menta-bg: #f5f2ed;
+  --color-menta-line: rgba(26, 26, 24, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-menta-bg text-menta-primary font-sans antialiased;
+  }
+}
+
+.data-row {
+  display: grid;
+  grid-template-columns: 40px 1.5fr 1fr 1fr;
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-menta-line);
+  transition: background 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.data-row:hover {
+  background: var(--color-menta-primary);
+  color: var(--color-menta-bg);
+}
+
+.col-header {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 11px;
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
